@@ -13,10 +13,10 @@ DPDK_CFLAGS += -include $(RTE_SDK)/$(RTE_TARGET)/include/rte_config.h \
 	-DRTE_MACHINE_CPUFLAG_RDRAND -DRTE_MACHINE_CPUFLAG_FSGSBASE -DRTE_MACHINE_CPUFLAG_F16C \
 	-DRTE_COMPILE_TIME_CPUFLAGS=RTE_CPUFLAG_SSE,RTE_CPUFLAG_SSE2,RTE_CPUFLAG_SSE3,RTE_CPUFLAG_SSSE3,RTE_CPUFLAG_SSE4_1,RTE_CPUFLAG_SSE4_2,RTE_CPUFLAG_AES,RTE_CPUFLAG_PCLMULQDQ,RTE_CPUFLAG_AVX,RTE_CPUFLAG_RDRAND,RTE_CPUFLAG_FSGSBASE,RTE_CPUFLAG_F16C
 
-DPDK_LDLIBS += -lrte_pmd_virtio_uio -lrte_pmd_vmxnet3_uio -lrte_pmd_ixgbe \
+DPDK_LDLIBS += -lrte_pmd_virtio -lrte_pmd_vmxnet3_uio -lrte_pmd_ixgbe \
           -lrte_pmd_e1000 -lrte_timer -lrte_hash \
           -lrte_mbuf -lethdev \
-          -lrte_eal -lrte_mempool -lrte_ring -lrte_pmd_ring -lrte_malloc
+          -lrte_eal -lrte_mempool -lrte_ring -lrte_pmd_ring
 
 dpdkl_yes=$(DPDK_OBJ) $(DPDK_LDLIBS)
 dpdkl_no=
